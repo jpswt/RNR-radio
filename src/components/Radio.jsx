@@ -3,10 +3,17 @@ import { RadioBrowserApi } from 'radio-browser-api';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import defaultImg from '../pngegg.png';
+import '../components/radio.css';
 
 const Radio = () => {
 	const [stations, setStations] = useState();
 	const [stationFilter, setStationFilter] = useState('all');
+	const [stationClick, setStationClick] = useState();
+	const [showRadio, setShowRadio] = useState(false);
+
+	const toggleRadio = () => {
+		setShowRadio(!showRadio);
+	};
 
 	useEffect(() => {
 		fetchRadioApi(stationFilter).then((data) => {
@@ -21,7 +28,8 @@ const Radio = () => {
 			.searchStations({
 				countryCode: 'US',
 				tag: stationFilter,
-				limit: 30,
+				limit: 50,
+				offset: 1,
 				hideBroken: true,
 			})
 			.then((data) => {
@@ -72,18 +80,27 @@ const Radio = () => {
 									src={station.favicon}
 									alt=""
 									onError={setDefaultSrc}
+									onClick={() => {
+										setStationClick(station);
+										toggleRadio();
+									}}
 								/>
 								<div className="name">{station.name}</div>
 							</div>
-							<AudioPlayer
-								className="player"
-								src={station.urlResolved}
-								showJumpControls={false}
-								layout="stacked"
-								customProgressBarSection={[]}
-								customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
-								autoPlayAfterSrcChange={false}
-							/>
+							{showRadio ? (
+								<div key={index}>
+									<AudioPlayer
+										className="player"
+										src={stationClick.urlResolved}
+										showJumpControls={false}
+										layout="stacked"
+										customProgressBarSection={[]}
+										customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
+										autoPlayAfterSrcChange={false}
+										auto
+									/>
+								</div>
+							) : null}
 						</div>
 					))}
 			</div>

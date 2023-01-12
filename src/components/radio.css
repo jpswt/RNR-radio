@@ -1,0 +1,41 @@
+.filters {
+	display: flex;
+	margin-bottom: 2rem;
+}
+
+.filters span {
+	margin: 0 auto;
+	color: red;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	border: 1px solid red;
+	margin: 0 1rem;
+}
+
+.radio {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.stations {
+	width: 70%;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: repeat(3, 33%);
+	gap: 3rem;
+}
+
+.logo {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+img {
+	cursor: pointer;
+}
