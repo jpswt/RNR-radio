@@ -9,15 +9,11 @@ const Radio = () => {
 	const [stations, setStations] = useState();
 	const [stationFilter, setStationFilter] = useState('all');
 	const [stationClick, setStationClick] = useState();
-	const [showRadio, setShowRadio] = useState(false);
-
-	const toggleRadio = () => {
-		setShowRadio(!showRadio);
-	};
 
 	useEffect(() => {
 		fetchRadioApi(stationFilter).then((data) => {
 			setStations(data);
+			setStationClick(data);
 		});
 	}, [stationFilter]);
 
@@ -57,8 +53,45 @@ const Radio = () => {
 		e.target.src = defaultImg;
 	};
 
+	const scrollToTop = () => {
+		window.scrollTo(0, 0);
+	};
+
+	if (!stations) {
+		return <h1>Loading...</h1>;
+	}
+
 	return (
 		<div className="radio">
+			<div className="media-container">
+				{stations && (
+					<div className="player-container">
+						<div className="player-logo-container">
+							<img
+								className="player-logo"
+								src={stationClick.favicon || defaultImg}
+								onError={setDefaultSrc}
+								alt=""
+							/>
+							<div className="station-name">
+								{stationClick.name || 'Select a Station'}
+							</div>
+						</div>
+						<div className="player-info">
+							<AudioPlayer
+								className="player"
+								src={stationClick.urlResolved}
+								showJumpControls={false}
+								// header={stationClick.name}
+								layout="horizontal"
+								customProgressBarSection={['CURRENT_TIME']}
+								customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
+								autoPlayAfterSrcChange={true}
+							/>
+						</div>
+					</div>
+				)}
+			</div>
 			<div className="filters">
 				{filters.map((genre, index) => (
 					<span
@@ -82,25 +115,11 @@ const Radio = () => {
 									onError={setDefaultSrc}
 									onClick={() => {
 										setStationClick(station);
-										toggleRadio();
+										scrollToTop();
 									}}
 								/>
 								<div className="name">{station.name}</div>
 							</div>
-							{showRadio ? (
-								<div key={index}>
-									<AudioPlayer
-										className="player"
-										src={stationClick.urlResolved}
-										showJumpControls={false}
-										layout="stacked"
-										customProgressBarSection={[]}
-										customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
-										autoPlayAfterSrcChange={false}
-										auto
-									/>
-								</div>
-							) : null}
 						</div>
 					))}
 			</div>
