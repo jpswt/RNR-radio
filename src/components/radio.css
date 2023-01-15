@@ -3,7 +3,6 @@
 	flex-direction: column;
 	width: 70%;
 	height: 325px;
-	/* border: 3px solid rgb(128, 192, 244); */
 	background-image: url('../boombox1.png');
 	background-repeat: no-repeat;
 	background-position: -16px -40px;
@@ -31,7 +30,6 @@
 .player-logo {
 	width: 75px;
 	height: 75px;
-	/* height: 100px; */
 	object-fit: cover;
 	padding: 0.5rem 0;
 }
@@ -73,22 +71,23 @@ svg,
 	width: 70%;
 	display: flex;
 	margin-bottom: 2rem;
-	/* padding: 0.2em 0.2em; */
+	transition: 0.1s;
 }
 
 .filters span {
 	width: 100%;
 	margin: 0 auto;
-	/* background-color: rgb(128, 192, 244); */
-	background-color: rgb(179, 179, 179);
+	background-color: #4f4f4f;
 	color: white;
 	cursor: pointer;
 	font-weight: bold;
 	padding: 1rem 1rem;
-	border-top: 3px solid #4f4f4f;
-	border-left: 3px solid #4f4f4f;
+	border-left: 3px solid #b3b3b3;
+	transition: 0.5s ease-in-out;
+}
 
-	/* margin: 0 1rem; */
+.filters span:hover {
+	background-color: black;
 }
 
 .filters span:first-child {
