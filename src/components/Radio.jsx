@@ -1,14 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { RadioBrowserApi } from 'radio-browser-api';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import defaultImg from '../pngegg.png';
 import '../components/radio.css';
+import { useCallback } from 'react';
 
 const Radio = () => {
 	const [stations, setStations] = useState();
 	const [stationFilter, setStationFilter] = useState('all');
 	const [stationClick, setStationClick] = useState();
+	const [currentPage, setCurrentPage] = useState(1);
+	let numStations = stations.length;
+	let limit = 8;
+
+	const onPageChange = useCallback(
+		(event, page) => {
+			event.preventDefault();
+			setCurrentPage(page);
+		},
+		[setCurrentPage]
+	);
 
 	useEffect(() => {
 		fetchRadioApi(stationFilter).then((data) => {
@@ -24,7 +36,7 @@ const Radio = () => {
 			.searchStations({
 				countryCode: 'US',
 				tag: stationFilter,
-				limit: 50,
+				limit: 52,
 				offset: 1,
 				hideBroken: true,
 			})
