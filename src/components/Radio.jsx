@@ -1,26 +1,19 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RadioBrowserApi } from 'radio-browser-api';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import './Pagination';
 import defaultImg from '../pngegg.png';
 import '../components/radio.css';
-import { useCallback } from 'react';
+import Pagination from './Pagination';
 
 const Radio = () => {
 	const [stations, setStations] = useState();
 	const [stationFilter, setStationFilter] = useState('all');
 	const [stationClick, setStationClick] = useState();
-	const [currentPage, setCurrentPage] = useState(1);
-	let numStations = stations.length;
-	let limit = 8;
 
-	const onPageChange = useCallback(
-		(event, page) => {
-			event.preventDefault();
-			setCurrentPage(page);
-		},
-		[setCurrentPage]
-	);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [stationsPerPage, setStationsPerPage] = useState(8);
 
 	useEffect(() => {
 		fetchRadioApi(stationFilter).then((data) => {
@@ -36,7 +29,7 @@ const Radio = () => {
 			.searchStations({
 				countryCode: 'US',
 				tag: stationFilter,
-				limit: 52,
+				limit: 80,
 				offset: 1,
 				hideBroken: true,
 			})
@@ -72,6 +65,19 @@ const Radio = () => {
 	if (!stations) {
 		return <h1>Loading...</h1>;
 	}
+
+	// get current posts
+	const indexOfLastStation = currentPage * stationsPerPage;
+	const indexofFirstStation = indexOfLastStation - stationsPerPage;
+	const currentStation = stations.slice(
+		indexofFirstStation,
+		indexOfLastStation
+	);
+
+	//change page
+	const paginate = (pageNumber) => {
+		setCurrentPage(pageNumber);
+	};
 
 	return (
 		<div className="radio">
@@ -117,7 +123,7 @@ const Radio = () => {
 			</div>
 			<div className="stations">
 				{stations &&
-					stations.map((station, index) => (
+					currentStation.map((station, index) => (
 						<div className="station" key={index}>
 							<div className="stationName">
 								<img
@@ -135,6 +141,12 @@ const Radio = () => {
 						</div>
 					))}
 			</div>
+			<Pagination
+				className="pagination"
+				stationsPerPage={stationsPerPage}
+				totalStations={stations.length}
+				paginate={paginate}
+			/>
 		</div>
 	);
 };
