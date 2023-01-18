@@ -1,3 +1,12 @@
+h1 {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 2.5rem;
+	margin: 1rem 0 0;
+	letter-spacing: 0.25rem;
+	color: hsl(207, 83%, 93%);
+	text-shadow: 3px 0px black;
+}
+
 .media-container {
 	display: flex;
 	flex-direction: column;
@@ -10,6 +19,7 @@
 	background-color: white;
 	border-top-left-radius: 24px;
 	border-top-right-radius: 24px;
+	margin-bottom: 4rem;
 }
 
 .player-container {
@@ -23,7 +33,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 6rem;
+	margin-top: 2.1rem;
 	margin-bottom: 3rem;
 }
 
@@ -44,13 +54,7 @@
 .player {
 	font-size: 1.2rem;
 	font-weight: bold;
-	border: none;
-	outline: none;
 	box-shadow: none;
-}
-
-.player:active {
-	visibility: hidden;
 }
 
 .rhap_container {
@@ -60,34 +64,34 @@
 svg,
 .rhap_time,
 .station-name {
-	color: white;
+	color: #ffffff;
 }
 
 .rhap_volume-indicator {
-	background: white;
+	background: hsl(0, 0%, 100%);
 }
 
 .filters {
-	width: 70%;
+	width: 100%;
 	display: flex;
-	margin-bottom: 1.5rem;
+	margin-top: 0.5rem;
 	transition: 0.1s;
 }
 
 .filters span {
 	width: 100%;
 	margin: 0 auto;
-	background-color: #4f4f4f;
-	color: white;
+	background-color: hsl(0, 0%, 31%);
+	color: hsl(0, 0%, 100%);
 	cursor: pointer;
 	font-weight: bold;
 	padding: 1rem 1rem;
-	border-left: 3px solid #b3b3b3;
+	border-left: 3px solid hsl(0, 0%, 70%);
 	transition: 0.5s ease-in-out;
 }
 
 .filters span:hover {
-	background-color: black;
+	background-color: hsl(0, 0%, 0%);
 }
 
 .filters span:first-child {
@@ -109,11 +113,17 @@ svg,
 
 .stations {
 	width: 70%;
+	min-height: 235px;
 	display: grid;
 	justify-content: center;
 	align-items: center;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 3rem;
+	gap: 2rem;
+}
+
+.name {
+	cursor: pointer;
+	font-weight: 600;
 }
 
 .logo {

@@ -19,6 +19,7 @@ const Radio = () => {
 		fetchRadioApi(stationFilter).then((data) => {
 			setStations(data);
 			setStationClick(data);
+			setCurrentPage(1);
 		});
 	}, [stationFilter]);
 
@@ -58,12 +59,8 @@ const Radio = () => {
 		e.target.src = defaultImg;
 	};
 
-	const scrollToTop = () => {
-		window.scrollTo(0, 0);
-	};
-
 	if (!stations) {
-		return <h1>Loading...</h1>;
+		return <h1 className="loading">Loading...</h1>;
 	}
 
 	// get current posts
@@ -82,6 +79,7 @@ const Radio = () => {
 	return (
 		<div className="radio">
 			<div className="media-container">
+				<h1>Rock-N-Radio</h1>
 				{stations && (
 					<div className="player-container">
 						<div className="player-logo-container">
@@ -109,32 +107,38 @@ const Radio = () => {
 						</div>
 					</div>
 				)}
-			</div>
-			<div className="filters">
-				{filters.map((genre, index) => (
-					<span
-						key={index}
-						className={stationFilter === genre ? 'selected' : ''}
-						onClick={() => setStationFilter(genre)}
-					>
-						{genre}
-					</span>
-				))}
+				<div className="filters">
+					{filters.map((genre, index) => (
+						<span
+							key={index}
+							className={stationFilter === genre ? 'selected' : ''}
+							onClick={() => {
+								setStationFilter(genre);
+							}}
+						>
+							{genre}
+						</span>
+					))}
+				</div>
 			</div>
 			<div className="stations">
 				{stations &&
 					currentStation.map((station, index) => (
 						<div className="station" key={index}>
-							<div className="stationName">
+							<div
+								className="stations-info"
+								onClick={() => {
+									setStationClick(station);
+								}}
+							>
 								<img
 									className="logo"
 									src={station.favicon}
 									alt=""
 									onError={setDefaultSrc}
-									onClick={() => {
-										setStationClick(station);
-										scrollToTop();
-									}}
+									// onClick={() => {
+									// 	setStationClick(station);
+									// }}
 								/>
 								<div className="name">{station.name}</div>
 							</div>
