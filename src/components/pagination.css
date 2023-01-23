@@ -11,7 +11,7 @@ ul {
 }
 
 li {
-	padding: 0.5rem 1rem;
+	/* width: 42px; */
 	border-top: 1px solid #4f4f4f;
 	border-bottom: 1px solid #4f4f4f;
 	border-right: 1px solid #4f4f4f;
@@ -22,11 +22,14 @@ li:first-child {
 }
 
 li a {
+	display: block;
+	padding: 0.5rem 1rem;
 	text-decoration: none;
 	color: black;
 	font-size: 1.1rem;
 }
 
 li a:hover {
-	font-weight: bold;
+	background-color: #4f4f4f;
+	color: white;
 }

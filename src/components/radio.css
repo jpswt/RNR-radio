@@ -1,3 +1,12 @@
+.radio {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+}
+
 h1 {
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	font-size: 2.5rem;
@@ -10,10 +19,12 @@ h1 {
 .media-container {
 	display: flex;
 	flex-direction: column;
-	width: 70%;
-	height: 325px;
+	width: 100%;
+	max-height: 325px;
+	/* height: 1%; */
 	background-image: url('../boombox1.png');
 	background-repeat: no-repeat;
+	/* background-size: cover; */
 	background-position: -16px -40px;
 	background-size: 103% 400px;
 	background-color: white;
@@ -72,7 +83,7 @@ svg,
 }
 
 .filters {
-	width: 100%;
+	/* width: 70%; */
 	display: flex;
 	margin-top: 0.5rem;
 	transition: 0.1s;
@@ -80,7 +91,8 @@ svg,
 
 .filters span {
 	width: 100%;
-	margin: 0 auto;
+	/* margin: 0 auto; */
+	display: inline-block;
 	background-color: hsl(0, 0%, 31%);
 	color: hsl(0, 0%, 100%);
 	cursor: pointer;
@@ -103,16 +115,8 @@ svg,
 	border-bottom-right-radius: 18px;
 }
 
-.radio {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 .stations {
-	width: 70%;
+	width: 100%;
 	min-height: 235px;
 	display: grid;
 	justify-content: center;
@@ -141,4 +145,10 @@ svg,
 
 img:not([src]) {
 	visibility: hidden;
+}
+
+@media (max-width: 1060px) {
+	.radio {
+		width: min(860px, 100%);
+	}
 }
