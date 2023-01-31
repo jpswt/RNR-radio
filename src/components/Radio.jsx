@@ -13,7 +13,7 @@ const Radio = () => {
 	const [stationClick, setStationClick] = useState();
 
 	const [currentPage, setCurrentPage] = useState(1);
-	const [stationsPerPage, setStationsPerPage] = useState(8);
+	const [stationsPerPage] = useState(8);
 
 	useEffect(() => {
 		fetchRadioApi(stationFilter).then((data) => {
@@ -63,7 +63,6 @@ const Radio = () => {
 		return <h1 className="loading">Loading...</h1>;
 	}
 
-	// get current posts
 	const indexOfLastStation = currentPage * stationsPerPage;
 	const indexofFirstStation = indexOfLastStation - stationsPerPage;
 	const currentStation = stations.slice(
@@ -98,7 +97,6 @@ const Radio = () => {
 								className="player"
 								src={stationClick.urlResolved}
 								showJumpControls={false}
-								// header={stationClick.name}
 								layout="horizontal"
 								customProgressBarSection={['CURRENT_TIME']}
 								customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
@@ -136,9 +134,6 @@ const Radio = () => {
 									src={station.favicon}
 									alt=""
 									onError={setDefaultSrc}
-									// onClick={() => {
-									// 	setStationClick(station);
-									// }}
 								/>
 								<div className="name">{station.name}</div>
 							</div>
