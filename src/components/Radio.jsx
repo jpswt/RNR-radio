@@ -109,7 +109,9 @@ const Radio = () => {
 					{filters.map((genre, index) => (
 						<span
 							key={index}
-							className={stationFilter === genre ? 'selected' : ''}
+							className={
+								stationFilter === genre ? 'selected-genre' : 'station-genre'
+							}
 							onClick={() => {
 								setStationFilter(genre);
 							}}

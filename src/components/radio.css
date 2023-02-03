@@ -4,6 +4,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 1rem;
 }
 
 h1 {
@@ -18,7 +19,7 @@ h1 {
 .media-container {
 	display: flex;
 	flex-direction: column;
-	width: 90%;
+	width: 100%;
 	max-height: 325px;
 	/* height: 1%; */
 	background-image: url('../boombox1.png');
@@ -27,9 +28,9 @@ h1 {
 	background-position: -16px -40px;
 	background-size: 103% 400px;
 	background-color: white;
-	border-top-left-radius: 24px;
-	border-top-right-radius: 24px;
-	margin-bottom: 4rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	margin-bottom: 5rem;
 }
 
 .player-container {
@@ -82,23 +83,30 @@ svg,
 	background: hsl(0, 0%, 100%);
 }
 
+.filters::backdrop {
+	content: '';
+	height: 50px;
+	background: red;
+	display: block;
+}
+
 .filters {
 	display: flex;
 	margin-top: 0.5rem;
 	transition: 0.1s;
+	background-color: hsl(0, 0%, 70%);
 }
 
 .filters span {
-	width: 90%;
-	/* margin: 0 auto; */
+	width: 100%;
 	display: block;
-	background-color: hsl(0, 0%, 31%);
 	color: hsl(0, 0%, 100%);
 	cursor: pointer;
 	font-weight: bold;
 	padding: 1rem 1rem;
-	border-left: 3px solid hsl(0, 0%, 70%);
-	transition: 0.5s ease-in-out;
+	margin-right: 3px;
+	/* border-left: 3px solid hsl(0, 0%, 70%); */
+	transition: 0.1s ease-in;
 }
 
 .filters span:hover {
@@ -107,11 +115,44 @@ svg,
 
 .filters span:first-child {
 	border-left: none;
-	border-bottom-left-radius: 18px;
 }
 
 .filters span:last-child {
-	border-bottom-right-radius: 18px;
+	margin-right: 0;
+}
+
+.station-genre {
+	position: relative;
+	background-color: hsl(0, 0%, 31%);
+	border-bottom: 12px groove hsla(0, 0%, 13%, 0.7);
+}
+
+.station-genre:after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	border-bottom: 6px ridge hsla(0, 0%, 100%, 0.7);
+	/* border-bottom: 8px ridge transparent; */
+	/* border-image: linear-gradient(
+		to top right,
+		rgb(201, 201, 201),
+		rgba(56, 2, 155, 0)
+	);
+	border-image-slice: 0.5; */
+	inset: 0px 1px 1px 1px;
+}
+
+.selected-genre {
+	position: relative;
+	background-color: hsl(0, 0%, 0%);
+	border-bottom: 4px solid rgb(49, 49, 49);
+}
+.selected-genre:after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	border-bottom: 6px solid hsla(0, 0%, 100%, 0.8);
+	inset: 0px 1px -1px 1px;
 }
 
 .stations {
