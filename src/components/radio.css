@@ -22,7 +22,7 @@ h1 {
 	width: 100%;
 	max-height: 325px;
 	/* height: 1%; */
-	background-image: url('../boombox1.png');
+	background-image: url('../assets/boombox1.png');
 	background-repeat: no-repeat;
 	/* background-size: cover; */
 	background-position: -16px -40px;

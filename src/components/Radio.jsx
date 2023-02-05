@@ -3,9 +3,10 @@ import { RadioBrowserApi } from 'radio-browser-api';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import './Pagination';
-import defaultImg from '../pngegg.png';
-import '../components/radio.css';
+import defaultImg from '../assets/radio-icon.png';
+import Loader from './Loader';
 import Pagination from './Pagination';
+import '../components/radio.css';
 
 const Radio = () => {
 	const [stations, setStations] = useState();
@@ -60,7 +61,7 @@ const Radio = () => {
 	};
 
 	if (!stations) {
-		return <h1 className="loading">Loading...</h1>;
+		return <Loader />;
 	}
 
 	const indexOfLastStation = currentPage * stationsPerPage;
