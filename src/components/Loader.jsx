@@ -3,12 +3,15 @@ import './loader.css';
 
 const Loader = () => {
 	return (
-		<div className="bar-container">
-			<div className="bar">Testing</div>
-			<div className="bar"></div>
-			<div className="bar"></div>
-			<div className="bar"></div>
-			<div className="bar"></div>
+		<div>
+			<h2 className="title">Loading</h2>
+			<div className="bar-container">
+				<div className="bar"></div>
+				<div className="bar"></div>
+				<div className="bar"></div>
+				<div className="bar"></div>
+				<div className="bar"></div>
+			</div>
 		</div>
 	);
 };

@@ -102,6 +102,7 @@ const Radio = () => {
 								customProgressBarSection={['CURRENT_TIME']}
 								customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
 								autoPlayAfterSrcChange={true}
+								timeFormat={'hh:mm:ss'}
 							/>
 						</div>
 					</div>
