@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# RNR - Rock N Radio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rock N Radio is a web-based React project created to stream radio broadcasts from around the country.  
 
-## Available Scripts
+## RNR Landing Page
 
-In the project directory, you can run:
+This is the home page for the RNR app which loads with all stations available. A user can select radio stations from their genre of choice. Every genre has numerous stations that a user can easily access through the pagination.
 
-### `npm start`
+<img width="1402" alt="Screen Shot 2023-02-05 at 8 38 08 AM" src="https://user-images.githubusercontent.com/94721942/216827403-5a97fa77-5654-4557-a3d9-e8bfcc67ae18.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## RNR Rock Genre Example
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is the Rock Genre home page selection.  It shows all of the stations that are categorized in the "Rock" music genre.  Once a user makes a radio selection, the station icon appears in the player and the stream begins to play.  
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="1396" alt="Screen Shot 2023-02-05 at 8 53 37 AM" src="https://user-images.githubusercontent.com/94721942/216827984-d3936140-5a77-4b67-89ba-d04b021f4721.png">
 
-### `npm run build`
+## RNR Rock Genre Pages
+This is the third page of the Rock Genre.  A user can select additional pages to listen to even more rock stations!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="1431" alt="Screen Shot 2023-02-05 at 9 21 43 AM" src="https://user-images.githubusercontent.com/94721942/216828212-5b24f443-2490-4a82-a094-043f681b3e17.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies Used
+- React JS
+- Node/NPM
+- Radio Browser API
+- CSS
