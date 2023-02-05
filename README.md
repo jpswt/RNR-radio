@@ -1,6 +1,6 @@
 # RNR - Rock N Radio
 
-Rock N Radio is a React front-end project created to listen radio broadcasts from around the country.  A user can select various genres and stations to listen to the streaming content. 
+Rock N Radio is a web-based React project created to listen radio broadcasts from around the country.  A user can select various genres and stations to listen to the streaming content. 
 
 ## RNR Landing Page
 
@@ -19,3 +19,9 @@ This is the Rock Genre home page selection.  It shows all of the stations that a
 This is the third page of the Rock Genre.  A user can select additional pages to listen to even more rock stations!
 
 <img width="1431" alt="Screen Shot 2023-02-05 at 9 21 43 AM" src="https://user-images.githubusercontent.com/94721942/216828212-5b24f443-2490-4a82-a094-043f681b3e17.png">
+
+## Technologies Used
+- React JS
+- Node/NPM
+- Radio Browser API
+- CSS
