@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# RNR - Rock N Radio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rock N Radio is a React front-end project created to listen radio broadcasts from around the country.  A user can select from various genres and a stations located througout the US.  
 
-## Available Scripts
+## RNR Landing Page
 
-In the project directory, you can run:
+This is the home page for the RNR app.  It allows access for the user to select a radio station of their choice.
+
+<img width="1402" alt="Screen Shot 2023-02-05 at 8 38 08 AM" src="https://user-images.githubusercontent.com/94721942/216827403-5a97fa77-5654-4557-a3d9-e8bfcc67ae18.png">
+
+
 
 ### `npm start`
 
