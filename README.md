@@ -10,7 +10,7 @@ This is the home page for the RNR app which loads with all stations available. A
 
 ## RNR Rock Genre Example
 
-This is the Rock Genre home page selection.  It shows all of the stations that are categorized in the "Rock" music category.  Once a user makes a radio selection, the station icon appears in the player and the stream begins to play.  
+This is the Rock Genre home page selection.  It shows all of the stations that are categorized in the "Rock" music genre.  Once a user makes a radio selection, the station icon appears in the player and the stream begins to play.  
 
 
 <img width="1396" alt="Screen Shot 2023-02-05 at 8 53 37 AM" src="https://user-images.githubusercontent.com/94721942/216827984-d3936140-5a77-4b67-89ba-d04b021f4721.png">
